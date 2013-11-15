@@ -3,11 +3,13 @@ require 'capybara'
 require 'capybara/dsl'
 require 'spec_helper.rb'
 
+Capybara.app_host = "http://www.sorensonmedia.com"
+
 feature 'Test Two Feature' do
   scenario 'My scenario' do
     visit '/'
   end
-  
+
   scenario 'Click Who we are' do
     visit '/'
     within 'footer' do
