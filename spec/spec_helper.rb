@@ -5,7 +5,25 @@ RSpec.configure do |config|
 end
 
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  file = File.new("spec/browser.txt", "r")
+  str = file.gets
+
+  #puts "str:" + str
+
+  if str.start_with? "chrome"
+    #puts "Using Chrome"
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+
+  elsif str.start_with? "ie"
+    #puts "Using IE"
+    Capybara::Selenium::Driver.new(app, :browser => :ie)
+  elsif str.start_with? "safari"
+    #puts "Using Safari"
+    Capybara::Selenium::Driver.new(app, :browser => :safari)
+  else
+    #puts "Using Firfox"
+    Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  end
 end
 
 Capybara.register_driver :selenium_firefox do |app|
