@@ -3,9 +3,13 @@ require 'capybara'
 require 'capybara/dsl'
 require 'spec_helper.rb'
 
-Capybara.app_host = "http://www.sorensonmedia.com"
-
 feature 'Test Two Feature' do
+
+  background do
+    Capybara.default_driver = :selenium
+    Capybara.app_host = "http://www.sorensonmedia.com"
+  end
+
   scenario 'My scenario' do
     visit '/'
   end

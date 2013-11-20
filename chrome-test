@@ -1,2 +1,0 @@
-ruby spec/set-browser.rb chrome
-rspec --format d

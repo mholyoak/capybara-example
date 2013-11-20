@@ -1,2 +1,0 @@
-ruby spec/set-browser.rb ie
-rspec --format d

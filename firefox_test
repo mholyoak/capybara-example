@@ -1,0 +1,2 @@
+ruby spec/set_browser.rb firefox
+rspec --format d

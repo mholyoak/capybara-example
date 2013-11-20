@@ -1,0 +1,2 @@
+ruby spec/set_browser.rb safari
+rspec --format d
